@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import {Link, withRouter} from 'react-router';
+import React, { PropTypes } from 'react';
+import { Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
 import Terms from './Terms';
 
@@ -20,7 +20,7 @@ class Register extends React.Component {
       email: '',
       open: false,
       isMusician: false,
-      tab: "Musician"
+      tab: 'Musician'
     };
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -39,15 +39,15 @@ class Register extends React.Component {
   }
 
   handlePasswordChange(ev) {
-    this.setState({password: ev.target.value});
+    this.setState({ password: ev.target.value });
   }
 
   handleEmailChange(ev) {
-    this.setState({email: ev.target.value});
+    this.setState({ email: ev.target.value });
   }
 
   handleVolunteerChange(ev) {
-    this.setState({isMusician: ev.target.checked});
+    this.setState({ isMusician: ev.target.checked });
   }
 
   handleFormSubmit(ev) {
@@ -56,22 +56,22 @@ class Register extends React.Component {
   }
 
   handleOpen = () => {
-    this.setState({open: true});
+    this.setState({ open: true });
   }
 
   handleClose = () => {
-    this.setState({open: false});
+    this.setState({ open: false });
   }
 
   isActive = () => {
-    this.setState({active: true});
+    this.setState({ active: true });
   }
 
   handleMusicianTabClick = () => {
-    this.setState({tab: "Musician"});
+    this.setState({ tab: 'Musician' });
   }
   handleOrganizerTabClick = () => {
-    this.setState({tab: "Organizer"});
+    this.setState({ tab: 'Organizer' });
   }
 
   render() {
@@ -81,67 +81,66 @@ class Register extends React.Component {
         <form className="form-register" onSubmit={this.handleFormSubmit}>
 
           <ul className="tabs" data-tabs id="register-tabs">
-            <li className={'tabs-title ' + (this.state.tab === "Musician" ? "is-active" : "")}>
+            <li className={'tabs-title ' + (this.state.tab === 'Musician' ? 'is-active' : '')}>
               <Link onKeyPress={(e) => {
                 if (e.charCode === 13) {
                   this.handleMusicianTabClick();
                 }
               }}
-                    onClick={this.handleMusicianTabClick}
-                    tabIndex={0}
+                onClick={this.handleMusicianTabClick}
+                tabIndex={0}
               >As a Musician</Link>
             </li>
-            <li className={'tabs-title ' + (this.state.tab === "Organizer" ? "is-active" : "")}>
+            <li className={'tabs-title ' + (this.state.tab === 'Organizer' ? 'is-active' : '')}>
               <Link onKeyPress={(e) => {
                 if (e.charCode === 13) {
                   this.handleOrganizerTabClick();
                 }
               }}
-                    onClick={this.handleOrganizerTabClick}
-                    tabIndex={0}
+                onClick={this.handleOrganizerTabClick}
+                tabIndex={0}
               >As an Organizer</Link>
             </li>
           </ul>
 
           <div className="tabs-content" data-tabs-content="register-tabs">
-            <div className={'tabs-panel ' + (this.state.tab === "Musician" ? "is-active" : "")} id="panel1">
+            <div className={'tabs-panel ' + (this.state.tab === 'Musician' ? 'is-active' : '')} id="panel1">
               <label>Email
                 <input type="text"
-                       onChange={this.handleEmailChange}
-                       placeholder="Email"
-                       required
-                       autoFocus
+                  onChange={this.handleEmailChange}
+                  placeholder="Email"
+                  required
+                  autoFocus
                 />
               </label>
               <label>Password
                 <input type="password"
-                       onChange={this.handlePasswordChange}
-                       placeholder="Password"
-                       required
+                  onChange={this.handlePasswordChange}
+                  placeholder="Password"
+                  required
                 />
               </label>
             </div>
           </div>
           <div className="tabs-content" data-tabs-content="register-tabs">
-            <div className={'tabs-panel ' + (this.state.tab === "Organizer" ? "is-active" : "")} id="panel2">
+            <div className={'tabs-panel ' + (this.state.tab === 'Organizer' ? 'is-active' : '')} id="panel2">
               <label>Email
                 <input type="text"
-                       onChange={this.handleEmailChange}
-                       placeholder="Email"
-                       required
-                       autoFocus
+                  onChange={this.handleEmailChange}
+                  placeholder="Email"
+                  required
+                  autoFocus
                 />
               </label>
               <label>Password
                 <input type="password"
-                       onChange={this.handlePasswordChange}
-                       placeholder="Password"
-                       required
+                  onChange={this.handlePasswordChange}
+                  placeholder="Password"
+                  required
                 />
               </label>
             </div>
           </div>
-
           <label className="terms">By clicking Register, you agree to the site
             {' '}
             <Link onKeyPress={(e) => {
@@ -149,8 +148,8 @@ class Register extends React.Component {
                 this.handleOpen();
               }
             }}
-                  onClick={this.handleOpen}
-                  tabIndex={0}
+              onClick={this.handleOpen}
+              tabIndex={0}
             >
               terms
             </Link>

@@ -118,6 +118,8 @@ const OrganizerProfile = ({ handleSubmit, createOrganization, updateOrganization
                 <Field
                   name="notes"
                   component="textarea"
+                  placeholder="Please describe the kind of events generally associated with your
+                    facility e.g., room size, audience, or preferred music style"
                 />
               </label>
             </div>
@@ -170,7 +172,9 @@ OrganizerProfile.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   createOrganization: PropTypes.func.isRequired,
   updateOrganization: PropTypes.func.isRequired,
-  data: PropTypes.array
+  data: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired
+  }))
 };
 
 export default reduxForm({
