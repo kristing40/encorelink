@@ -16,6 +16,15 @@
   color: #1779ba;
 }
 
+.tabs-content {
+  background: #b4dfe5;
+  border: 0px;
+}
+
+.tabs-title.is-active {
+  background: #e6e6e6;
+}
+
 .tabs::before, .tabs::after {
   display: table;
   content: ' ';
