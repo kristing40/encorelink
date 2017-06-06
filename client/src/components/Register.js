@@ -81,7 +81,7 @@ class Register extends React.Component {
         <form className="form-register" onSubmit={this.handleFormSubmit}>
 
           <ul className="tabs" data-tabs id="register-tabs">
-            <li className={'tabs-title ' + (this.state.tab === 'Musician' ? 'is-active' : '')}>
+            <li className={`tabs-title ${this.state.tab === 'Musician' ? 'is-active' : ''}`}>
               <Link onKeyPress={(e) => {
                 if (e.charCode === 13) {
                   this.handleMusicianTabClick();
@@ -91,7 +91,7 @@ class Register extends React.Component {
                 tabIndex={0}
               >As a Musician</Link>
             </li>
-            <li className={'tabs-title ' + (this.state.tab === 'Organizer' ? 'is-active' : '')}>
+            <li className={`tabs-title ${this.state.tab === 'Organizer' ? 'is-active' : ''}`}>
               <Link onKeyPress={(e) => {
                 if (e.charCode === 13) {
                   this.handleOrganizerTabClick();
@@ -104,7 +104,7 @@ class Register extends React.Component {
           </ul>
 
           <div className="tabs-content" data-tabs-content="register-tabs">
-            <div className={'tabs-panel ' + (this.state.tab === 'Musician' ? 'is-active' : '')} id="panel1">
+            <div className={`tabs-panel ${this.state.tab === 'Musician' ? 'is-active' : ''}`} id="panel1">
               <label>Email
                 <input type="text"
                   onChange={this.handleEmailChange}
@@ -123,7 +123,7 @@ class Register extends React.Component {
             </div>
           </div>
           <div className="tabs-content" data-tabs-content="register-tabs">
-            <div className={'tabs-panel ' + (this.state.tab === 'Organizer' ? 'is-active' : '')} id="panel2">
+            <div className={`tabs-panel ${this.state.tab === 'Organizer' ? 'is-active' : ''}`} id="panel2">
               <label>Email
                 <input type="text"
                   onChange={this.handleEmailChange}
