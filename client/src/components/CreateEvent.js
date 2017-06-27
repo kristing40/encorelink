@@ -7,9 +7,12 @@ import AutocompleteLocation from './forms/AutocompleteLocation';
 import FormattedFormField from './forms/FormattedFormField';
 
 
-const lessThan = (value, allValues) => ((console.log('lessThan: ', value) && value && value.isBefore(allValues.endTime, 'minutes')) ? undefined : 'Start time must be before end time');
-const greaterThan = (value, allValues) => ((console.log('greaterThan: ', value) && value && value.isAfter(allValues.startTime, 'minutes')) ? undefined : 'End time must be after start time');
-
+const lessThan = (value, allValues) => (
+  (value && Datetime.moment(value).isBefore(allValues.endTime, 'minutes')) ? undefined : 'Start time must be before end time'
+);
+const greaterThan = (value, allValues) => (
+  (value && Datetime.moment(value).isAfter(allValues.startTime, 'minutes')) ? undefined : 'End time must be after start time'
+);
 
 const CreateEvent = ({ handleSubmit }) => (
   <div className="row">
@@ -54,7 +57,7 @@ const CreateEvent = ({ handleSubmit }) => (
                 <Datetime
                   dateFormat={false}
                   inputProps={{ required: 'required' }}
-                  onChange={(moment) => props.input.onChange(moment.format())}
+                  // onChange={(moment) => props.input.onChange(moment.format())}
                   {...props.input}
                 />
               </div>
@@ -73,7 +76,7 @@ const CreateEvent = ({ handleSubmit }) => (
                 <Datetime
                   dateFormat={false}
                   inputProps={{ required: 'required' }}
-                  onChange={(moment) => props.input.onChange(moment.format())}
+                  // onChange={(moment) => props.input.onChange(moment.format())}
                   {...props.input}
                   />
                 </div>
