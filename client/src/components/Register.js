@@ -83,7 +83,6 @@ class Register extends React.Component {
           checked={type === 'musician'}
           onChange={this.handleVolunteerChange}
         />
-        I'm a musician
       </label>
       <label className="terms">By clicking Register, you agree to the site
         {' '}
@@ -113,23 +112,23 @@ class Register extends React.Component {
     return (
       <div className="register">
         <ul className="tabs">
-          <li className={'tabs-title ' + (this.state.tab === 'musician' ? 'is-active' : '')}>
+          <li className={'tabs-title ' + (this.state.tab === 'musician' ? 'is-active' : 'not-active')}>
             <Link onClick={this.switchTabs('musician')}>
               Sign up as a Musician
             </Link>
           </li>
-          <li className={'tabs-title ' + (this.state.tab === 'organizer' ? 'is-active' : '')}>
+          <li className={'tabs-title ' + (this.state.tab === 'organizer' ? 'is-active' : 'not-active')}>
             <Link onClick={this.switchTabs('organizer')}>
-              Sign up as a Organizer
+              Sign up as an Organizer
             </Link>
           </li>
         </ul>
 
         <div className="tabs-content">
-          <div className={'tabs-panel ' + (this.state.tab === 'musician' ? 'is-active' : '')}>
+          <div className={'tabs-panel ' + (this.state.tab === 'musician' ? 'is-active' : 'not-active')}>
             {this.registerForm('musician')}
           </div>
-          <div className={'tabs-panel ' + (this.state.tab === 'organizer' ? 'is-active' : '')}>
+          <div className={'tabs-panel ' + (this.state.tab === 'organizer' ? 'is-active' : 'not-active')}>
             {this.registerForm('organizer')}
           </div>
         </div>

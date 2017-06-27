@@ -8,10 +8,6 @@
   color: #1779ba;
 }
 
-.tabs-title:hover {
-  background: #777;
-}
-
 .tabs-title > a {
   display: block;
   padding: 1.25rem 1.5rem;
@@ -26,7 +22,23 @@
 }
 
 .tabs-title.is-active {
-  background: #e6e6e6;
+  background: #fff;
+}
+
+.tabs-title.not-active {
+  background: #eee;
+}
+
+.tabs-title:hover {
+  background: #777;
+}
+
+.tabs-title > a:hover {
+  background: #ddddff;
+}
+
+.tabs-title.is-active:hover {
+  background: #777777;
 }
 
 .tabs::before, .tabs::after {
