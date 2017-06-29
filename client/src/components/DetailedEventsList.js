@@ -3,6 +3,7 @@ import React from 'react';
 import EventRow from './EventRow';
 
 function Events({ data, isMusician }) {
+  console.log('event: ', event);
   const events = data.map(event =>
     <EventRow key={event.id} event={event} />
   );

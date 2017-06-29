@@ -7,7 +7,7 @@ import { apiAction } from './modelActions';
 
 export function createEvent(formData) {
   return apiAction('post', (state) => `users/${getUserId(state)}/events`, {
-    body: correctDatesForKeys(formData, ['date', 'endTime']),
+    body: correctDatesForKeys(formData, ['date', 'startTime', 'endTime']),
 
     onSuccess: (res, state) => {
       const organizations = getModels(state, `users/${getUserId(state)}/organization`) || [];

@@ -111,6 +111,7 @@ function Event({
 Event.propTypes = {
   data: PropTypes.shape({
     date: PropTypes.string.isRequired,
+    startTime: PropTypes.string.isRequired,
     endTime: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     location: PropTypes.string.isRequired,
