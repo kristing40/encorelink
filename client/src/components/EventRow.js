@@ -4,8 +4,7 @@ import { Link } from 'react-router';
 import AddToCalendar from 'react-add-to-calendar';
 import { getFormattedDayAndTime } from '../utils/dateFormatting';
 
-
-function EventRow({ event }) {
+function EventRow({ event, hideCalendar }) {
   const { id, date, startTime, endTime, name, location, notes } = event;
   const { day, time } = getFormattedDayAndTime(date, startTime, endTime);
 
@@ -31,7 +30,7 @@ function EventRow({ event }) {
               description: notes,
               location,
               startTime: date,
-              endTime: endDate
+              endTime
             }}
             buttonLabel="add to calendar"
           />
