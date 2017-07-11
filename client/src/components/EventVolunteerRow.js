@@ -5,7 +5,7 @@ import AddToCalendar from 'react-add-to-calendar';
 import { getFormattedDayAndTime } from '../utils/dateFormatting';
 
 const EventVolunteerRow = ({ eventVolunteer, isCurrentlyPending, approveEventMusician, rejectEventMusician }) => {
-  const { day, time } = getFormattedDayAndTime(eventVolunteer.event.date, eventVolunteer.event.endTime);
+  const { day, time } = getFormattedDayAndTime(eventVolunteer.event.date, eventVolunteer.event.endDate);
   const { event } = eventVolunteer;
 
   return (
@@ -58,7 +58,7 @@ EventVolunteerRow.propTypes = {
   eventVolunteer: PropTypes.shape({
     event: PropTypes.shape({
       date: PropTypes.string.isRequired,
-      endTime: PropTypes.string.isRequired,
+      endDate: PropTypes.string.isRequired,
     }),
     volunteer: PropTypes.shape({
       email: PropTypes.string.isRequired,

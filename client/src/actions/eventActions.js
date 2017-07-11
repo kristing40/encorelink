@@ -10,12 +10,12 @@ export function createEvent(formData) {
   postData.date.set({
     hours: postData.startTime.get('hours'),
     minutes: postData.startTime.get('minutes'),
-    seconds: postData.startTime.get('seconds'),
+    seconds: postData.startTime.get('seconds')
   });
   postData.endDate = postData.endTime.set({
     date: postData.date.get('date'),
     month: postData.date.get('month'),
-    year: postData.date.get('year'),
+    year: postData.date.get('year')
   });
   return apiAction('post', (state) => `users/${getUserId(state)}/events`, {
     body: postData,

@@ -6,7 +6,6 @@ import 'react-datetime/css/react-datetime.css';
 import AutocompleteLocation from './forms/AutocompleteLocation';
 import FormattedFormField from './forms/FormattedFormField';
 
-
 const lessThan = (value, allValues) => (
   (value && Datetime.moment(value).isBefore(allValues.endTime, 'minutes')) ? undefined : 'Start time must be before end time'
 );
