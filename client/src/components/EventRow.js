@@ -6,8 +6,8 @@ import { getFormattedDayAndTime } from '../utils/dateFormatting';
 
 
 function EventRow({ event, hideCalendar }) {
-  const { id, date, startTime, endTime, name, location, notes } = event;
-  const { day, time } = getFormattedDayAndTime(date, startTime, endTime);
+  const { id, date, endDate, name, location, notes } = event;
+  const { day, time } = getFormattedDayAndTime(date, endDate);
 
   return (
     <div className="row event-row">
@@ -31,7 +31,7 @@ function EventRow({ event, hideCalendar }) {
               description: notes,
               location,
               startTime: date,
-              endTime
+              endTime: endDate,
             }}
             buttonLabel="add to calendar"
           />
@@ -44,7 +44,7 @@ function EventRow({ event, hideCalendar }) {
 EventRow.propTypes = {
   event: PropTypes.shape({
     date: PropTypes.string.isRequired,
-    endTime: PropTypes.string.isRequired,
+    endDate: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     location: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired

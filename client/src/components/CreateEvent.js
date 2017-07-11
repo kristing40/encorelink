@@ -57,7 +57,7 @@ const CreateEvent = ({ handleSubmit }) => (
                   <Datetime
                     dateFormat={false}
                     inputProps={{ required: 'required' }}
-                    // onChange={(moment) => props.input.onChange(moment.format())}
+                    onChange={(moment) => props.input.onChange(moment.format())}
                     {...props.input}
                   />
                 </div>
@@ -76,7 +76,7 @@ const CreateEvent = ({ handleSubmit }) => (
                   <Datetime
                     dateFormat={false}
                     inputProps={{ required: 'required' }}
-                    // onChange={(moment) => props.input.onChange(moment.format())}
+                    onChange={(moment) => props.input.onChange(moment.format())}
                     {...props.input}
                   />
                 </div>
